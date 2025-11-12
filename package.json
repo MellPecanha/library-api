@@ -87,9 +87,9 @@
     "yn": "^3.1.1"
   },
   "scripts": {
-    "compile": " npx tsc",
+    "compile": "npx tsc",
     "build": "rm -rf dist/ && node esbuild-config.js",
-    "start": "npm run build && node --env-file=.env ./dist/index.js",
+    "start": "npm run build && node --env-file=.env dist/index.js",
     "dev": "node esbuild-config.js --watch & node --env-file=.env --watch dist/index.js"
   },
   "author": "Mell Peçanha",

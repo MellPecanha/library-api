@@ -3,14 +3,23 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "target": "es2022",
+    "rootDir": "src/",
+    "outDir": "dist/",
     "allowJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "strict": true
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }

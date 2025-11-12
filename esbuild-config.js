@@ -3,22 +3,22 @@ import esbuild from 'esbuild';
 const config = {
   entryPoints: ['src/index.ts'],
   bundle: true,
-  outfile: 'dist/index.js',
+  outdir: 'dist',
   tsconfig: 'tsconfig.json',
   platform: 'node',
   sourcemap: true,
   format: "esm",
   external: [
-    'events',
-    // '@prisma/client',
-    // '@prisma/adapter-better-sqlite3',
-    // 'better-sqlite3',
-    // '.prisma/client',
-
-    // 'node:path',
-    // 'node:url',
-    // 'node:fs',
-    // 'node:os'
+    "express",
+    "@prisma/client",
+    ".prisma/client",
+    "@prisma/adapter-better-sqlite3",
+    "better-sqlite3",
+    "events",
+    "path",
+    "url",
+    "fs",
+    "os"
   ],
 };
 
