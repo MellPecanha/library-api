@@ -4,8 +4,16 @@ import { prisma } from '../database/db';
 class DeleteBookController {
   async handle(req: Request, res: Response): Promise<void> {
     const { ISBN } = req.body;
+    const isBookExists = await prisma.book.findUnique({
+      where: { ISBN },
+    });
 
-    prisma.book.delete({
+    if (!isBookExists) {
+      res.status(404).json({ ok: false, message: 'Book not found' });
+      return;
+    }
+
+    await prisma.book.delete({
       where: { ISBN },
     });
 
