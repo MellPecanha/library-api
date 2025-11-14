@@ -3,6 +3,7 @@ import { Router } from 'express'
 import { createBookController } from '../controllers/createBookController'
 import { updateBookController } from '../controllers/updateBookController'
 import { deleteBookController } from '../controllers/deleteBookController'
+import { listBooksController } from '../controllers/listBooksController'
 
 import { createPublisherController } from '../controllers/createPublisherController'
 import { publisherBooksController } from '../controllers/publisherBooksController'
@@ -13,6 +14,7 @@ const router = Router()
 router.post("/book", createBookController.handle)
 router.put("/book", updateBookController.handle)
 router.delete("/book", deleteBookController.handle)
+router.get("/book", listBooksController.handle)
 
 router.post("/publisher", createPublisherController.handle)
 router.put("/publisher/:publisherId", publisherBooksController.handle)
